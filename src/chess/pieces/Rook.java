@@ -5,7 +5,7 @@ import boardgame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Rook extends ChessPiece{
+public class Rook extends ChessPiece {
 
 	public Rook(Board board, Color color) {
 		super(board, color);
@@ -18,7 +18,7 @@ public class Rook extends ChessPiece{
 	
 	@Override
 	public boolean[][] possibleMoves() {
-		boolean[][]mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 		
 		Position p = new Position(0, 0);
 		
@@ -31,7 +31,6 @@ public class Rook extends ChessPiece{
 		if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		
 		
 		// left
 		p.setValues(position.getRow(), position.getColumn() - 1);
